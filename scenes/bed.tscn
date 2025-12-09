@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgjuv8gjblc65"]
+
+[ext_resource type="Texture2D" uid="uid://cjnkodoa18637" path="res://assets/sprites/bed.png" id="1_akt7f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqty4"]
+radius = 41.04875
+
+[node name="Bed" type="Area2D" groups=["bed"]]
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(80, 160)
+texture = ExtResource("1_akt7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(72, 163)
+shape = SubResource("CircleShape2D_fqty4")

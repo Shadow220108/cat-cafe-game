@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5sulclvnk58e"]
+
+[ext_resource type="Texture2D" uid="uid://do1cm20pqipuu" path="res://script/tilemap_packed.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://d1kw5v4l1teg6" path="res://script/menu.gd" id="1_ouk20"]
+
+[sub_resource type="FontVariation" id="FontVariation_mae5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4hy44"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ytr4m"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ouk20")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1186.0
+offset_bottom = 675.0
+color = Color(1, 0.81960785, 0.8627451, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(550, 243)
+scale = Vector2(8, 8)
+texture = ExtResource("1_lti8b")
+region_enabled = true
+region_rect = Rect2(224.78745, 97.005684, 45.788025, 14.071442)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 192.0
+offset_right = 735.0
+offset_bottom = 292.0
+theme_override_fonts/font = SubResource("FontVariation_mae5d")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4hy44")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ytr4m")
+text = "START CAFE"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 308.0
+offset_right = 726.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Drag cats to food/beds.
+Don't let them starve!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbys6sgt5lmgu"]
+
+[ext_resource type="Script" uid="uid://bps831jo7nelk" path="res://bowl.gd" id="1_r2sgd"]
+[ext_resource type="Texture2D" uid="uid://cpthb1qg7xk2g" path="res://assets/sprites/bowl-emptyl.png" id="2_nmbdg"]
+[ext_resource type="Texture2D" uid="uid://dp8q6mmgvvagx" path="res://assets/sprites/bowl-full.png" id="3_dtslu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0y8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nmbdg")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dtslu")
+}],
+"loop": true,
+"name": &"full",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plbob"]
+size = Vector2(16, 7)
+
+[node name="Bowl" type="Area2D" groups=["food"]]
+script = ExtResource("1_r2sgd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(37, 20)
+sprite_frames = SubResource("SpriteFrames_o0y8p")
+animation = &"full"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(37, 22.5)
+shape = SubResource("RectangleShape2D_plbob")
